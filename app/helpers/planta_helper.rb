@@ -1,0 +1,2 @@
+module PlantaHelper
+end

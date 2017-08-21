@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  familia: MyString
+  genero: MyText
+  nombre: MyText
+  germinaciondias: 1
+  altura: 1
+  precio: 9.99
+
+two:
+  familia: MyString
+  genero: MyText
+  nombre: MyText
+  germinaciondias: 1
+  altura: 1
+  precio: 9.99

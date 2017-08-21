@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Familia:</strong>
+  <%= @plantum.familia %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @plantum.genero %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @plantum.nombre %>
+</p>
+
+<p>
+  <strong>Germinaciondias:</strong>
+  <%= @plantum.germinaciondias %>
+</p>
+
+<p>
+  <strong>Altura:</strong>
+  <%= @plantum.altura %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @plantum.precio %>
+</p>
+
+<%= link_to 'Edit', edit_plantum_path(@plantum) %> |
+<%= link_to 'Back', planta_path %>

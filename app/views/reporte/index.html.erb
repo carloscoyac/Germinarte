@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<br></br>
+
+<div class="container">
+   <table class="table">
+   
+   <thead>
+     <tr class="success">
+      <th>Familia</th>
+      <th>Genero</th>
+      <th>Nombre</th>
+      <th>Germinaciondias</th>
+      <th>Altura</th>
+      <th>Precio</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plantasOrdenadas.each do |plantum| %>
+        <tr class="success">
+        <td><%= plantum.familia %></td>
+        <td><%= plantum.genero %></td>
+        <td><%= plantum.nombre %></td>
+        <td><%= plantum.germinaciondias %></td>
+        <td><%= plantum.altura %></td>
+        <td><%= plantum.precio %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% plantabarata = @plantasOrdenadas.first %>
+<h3>La planta mas barata es: <%= plantabarata.nombre %></h3>
+
+<% plantacara = @plantasOrdenadas.last %>
+<h3>La planta mas cara es: <%= plantacara.nombre %></h3>
+
+   <table class="table">
+   
+   <thead>
+     <tr class="success">
+      <th>Familia</th>
+      <th>Genero</th>
+      <th>Nombre</th>
+      <th>Germinaciondias</th>
+      <th>Altura</th>
+      <th>Precio</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plantasAltura.each do |plantum| %>
+        <tr class="success">
+        <td><%= plantum.familia %></td>
+        <td><%= plantum.genero %></td>
+        <td><%= plantum.nombre %></td>
+        <td><%= plantum.germinaciondias %></td>
+        <td><%= plantum.altura %></td>
+        <td><%= plantum.precio %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% plantalta = @plantasAltura.last %>
+<h3>La planta mas alta es: <%= plantalta.altura %> <%= plantalta.nombre %></h3>
+
+<% plantabaja = @plantasAltura.first %>
+<h3 color: "white">La planta mas baja es: <%= plantabaja.altura %> <%= plantabaja.nombre %></h3>
+
+<table class="table">
+   
+   <thead>
+     <tr class="success">
+      <th>Familia</th>
+      <th>Genero</th>
+      <th>Nombre</th>
+      <th>Germinaciondias</th>
+      <th>Altura</th>
+      <th>Precio</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plantasGerminacion.each do |plantum| %>
+        <tr class="success">
+        <td><%= plantum.familia %></td>
+        <td><%= plantum.genero %></td>
+        <td><%= plantum.nombre %></td>
+        <td><%= plantum.germinaciondias %></td>
+        <td><%= plantum.altura %></td>
+        <td><%= plantum.precio %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% plantaLenta = @plantasGerminacion.last %>
+<h3>La planta que mas tarda en germinar: <%= plantaLenta.germinaciondias %> <%= plantaLenta.nombre %></h3>
+
+<% plantaRapida = @plantasGerminacion.first %>
+<h3>La planta que menos tarda en germinar: <%= plantaRapida.germinaciondias %> <%= plantaRapida.nombre %></h3>
+      
+</div>
+<%= link_to 'Back', planta_path %>
+
+</body>
+</html>
+
+

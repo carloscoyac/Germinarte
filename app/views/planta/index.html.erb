@@ -1,0 +1,71 @@
+<html>
+<head>
+  
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <p id="notice"><%= notice %></p>
+
+ 
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="http://static.wixstatic.com/media/1b2d5f_fb611b1ffce8be45bee904726235a382.jpg_512" alt="germinarte" style="width:130px; height:50px;"> 
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li> <%= link_to 'New Plantum', new_plantum_path %> </li>
+      <li> <%= link_to 'reporte', reporte_index_path %> </li>
+    
+    </ul>
+  </div>
+</nav>
+
+<br></br>
+
+<table class="table">
+  <thead>
+    <tr class="success">
+      <th>Familia</th>
+      <th>Genero</th>
+      <th>Nombre</th>
+      <th>Germinaciondias</th>
+      <th>Altura</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planta.each do |plantum| %>
+      <tr class="success">
+        <td><%= plantum.familia %></td>
+        <td><%= plantum.genero %></td>
+        <td><%= plantum.nombre %></td>
+        <td><%= plantum.germinaciondias %></td>
+        <td><%= plantum.altura %></td>
+        <td><%= plantum.precio %></td>
+        <td><%= link_to 'Show', plantum %></td>
+        <td><%= link_to 'Edit', edit_plantum_path(plantum) %></td>
+        <td><%= link_to 'Destroy', plantum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+</body>
+</html>

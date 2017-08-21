@@ -1,0 +1,47 @@
+<%= form_with(model: plantum, local: true) do |form| %>
+  <% if plantum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plantum.errors.count, "error") %> prohibited this plantum from being saved:</h2>
+
+      <ul>
+      <% plantum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :familia %>
+    <%= form.text_field :familia, id: :plantum_familia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genero %>
+    <%= form.text_area :genero, id: :plantum_genero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_area :nombre, id: :plantum_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :germinaciondias %>
+    <%= form.number_field :germinaciondias, id: :plantum_germinaciondias %>
+  </div>
+
+  <div class="field">
+    <%= form.label :altura %>
+    <%= form.number_field :altura, id: :plantum_altura %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.text_field :precio, id: :plantum_precio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
